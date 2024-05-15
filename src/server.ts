@@ -3,6 +3,11 @@ import { knex } from './database'
 
 const app = fastify()
 
+app.addHook('onSend', (request, reply, payload, done) => {
+  reply.header('Access-Control-Allow-Origin', '*')
+  done(null, payload)
+})
+
 app.get('/dados', async (request, reply) => {
   try {
     const rows = await knex('tb_teste').select(
