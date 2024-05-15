@@ -14,14 +14,14 @@ app.get('/dados', async (request, reply) => {
       'valor_aprovado',
     )
 
-    const result = rows.map((row) => ({
+    const result = { card: rows.map((row) => ({
       id_projeto: row.id_projeto,
       nome: row.nome,
       municipio: row.municipio,
       uf: row.uf,
       valor_captado: row.valor_captado,
       valor_aprovado: row.valor_aprovado,
-    }))
+    })) }
 
     reply.type('application/json').send(JSON.stringify(result))
   } catch (error) {
