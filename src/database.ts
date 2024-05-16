@@ -7,6 +7,6 @@ export const knex = setupKnes({
     port: 3306,
     user: 'root',
     password: 'Root1234',
-    database: 'simbiteste',
+    database: 'simbidb',
   },
 })
